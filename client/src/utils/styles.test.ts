@@ -15,7 +15,7 @@ describe('styles', () => {
 
     it('Should join classes with false condition', () => {
         const styles = ['test1', 'test2', 'test3']
-        const result = css(styles, { if: true, true: 'true', false: 'false' })
+        const result = css(styles, { if: false, true: 'true', false: 'false' })
         expect(result).toBe('test1 test2 test3 false')
     })
 })

@@ -1,0 +1,4 @@
+{
+  "jestrunner.configPath": "client/jest.config.js",
+  "jestrunner.jestPath": "client/node_modules/jest/bin/jest.js"
+}

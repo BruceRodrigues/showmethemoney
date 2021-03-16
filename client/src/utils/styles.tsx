@@ -10,5 +10,5 @@ export const css = (
     if (condition) {
         style = condition.if ? condition.true : condition.false
     }
-    return `${value.join(' ')} ${style}`
+    return `${value.join(' ')} ${style}`.trimEnd()
 }
