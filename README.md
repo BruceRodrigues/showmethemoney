@@ -17,4 +17,4 @@ At the end, this application should be deployed on AWS (preferred) or Azure, and
 - Database TBD
 
 ## References
-- [Atomic web design]: https://bradfrost.com/blog/post/atomic-web-design/
+- [Atomic web design](https://bradfrost.com/blog/post/atomic-web-design/)
