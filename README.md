@@ -15,3 +15,6 @@ At the end, this application should be deployed on AWS (preferred) or Azure, and
 - Docker
 - Tailwind CSS
 - Database TBD
+
+## References
+- [Atomic web design]: https://bradfrost.com/blog/post/atomic-web-design/
