@@ -1,7 +1,6 @@
 {
-  "jestrunner.configPath": "client/jest.config.js",
-  "jestrunner.jestPath": "client/node_modules/jest/bin/jest.js",
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
-  }
+  },
+  "jestrunner.jestCommand": "yarn --cwd client test "
 }
