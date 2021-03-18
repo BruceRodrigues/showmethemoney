@@ -6,7 +6,12 @@ export default { title: 'Atoms/Pill' }
 
 const Template = ({ ...args }: PillProps) => <Pill {...args} />
 
-export const Basic = Template.bind({})
-Basic.args = {
-    value: 10,
+export const Positive = Template.bind({})
+Positive.args = {
+    value: 10.1,
+}
+
+export const Negative = Template.bind({})
+Negative.args = {
+    value: -10.8,
 }
