@@ -29,8 +29,8 @@ const Content = ({
     </Cell>
 )
 
-export const basic = () => (
-    <Grid sm={2} md={4} lg={6} gap={1}>
+const Template = ({ ...args }) => (
+    <Grid {...args}>
         <Content>sm=1 md=1 lg=1</Content>
         <Content>sm=1 md=1 lg=1</Content>
         <Content sm={2} md={4} lg={6}>
@@ -43,3 +43,11 @@ export const basic = () => (
         <Content>sm=1 md=1 lg=1</Content>
     </Grid>
 )
+
+export const Basic = Template.bind({})
+Basic.args = {
+    sm: 2,
+    md: 4,
+    lg: 6,
+    gap: 1,
+}
