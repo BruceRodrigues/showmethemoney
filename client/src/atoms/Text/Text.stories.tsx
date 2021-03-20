@@ -10,4 +10,5 @@ const Template = ({ ...args }) => (
 export const basic = Template.bind({})
 basic.args = {
     variant: 'p',
+    size: 'md',
 }
