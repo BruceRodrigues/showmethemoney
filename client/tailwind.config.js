@@ -7,6 +7,11 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {},
+        screens: {
+            sm: '320px',
+            md: '830px',
+            lg: '1080px',
+        },
     },
     variants: {
         extend: {},

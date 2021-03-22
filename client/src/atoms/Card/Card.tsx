@@ -1,14 +1,15 @@
 import React from 'react'
 import { css } from '../../utils'
 
-type Color = 'red' | 'green' | 'yellow' | 'blue'
+export type Color = 'red' | 'green' | 'yellow' | 'blue'
 
 interface CardProps {
-    color: Color
+    color?: Color
     children: React.ReactNode
 }
 
 const base = [
+    'card',
     'bg-transparent',
     'rounded-md',
     'border-solid',
@@ -24,6 +25,6 @@ const styles = {
     green: [...base, 'border-green-500'],
 }
 
-export const Card = ({ color, children }: CardProps) => (
+export const Card = ({ color = 'blue', children }: CardProps) => (
     <div className={css(styles[color])}>{children}</div>
 )
