@@ -2,5 +2,8 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
-  "jestrunner.jestCommand": "yarn --cwd client test "
+  "jestrunner.jestCommand": "yarn --cwd client test ",
+  "files.exclude": {
+    "**/node_modules/": true
+  }
 }
