@@ -11,10 +11,22 @@ type Direction = 'up' | 'down' | 'equal'
 interface ArrowProps {
     direction: Direction
 }
+
+const baseStyles = ['arrow']
+
 const Arrows = {
-    up: { component: ChevronDoubleUpOutline, styles: ['text-green-500'] },
-    down: { component: ChevronDoubleDownOutline, styles: ['text-red-500'] },
-    equal: { component: MenuAlt4Outline, styles: ['text-yellow-500'] },
+    up: {
+        component: ChevronDoubleUpOutline,
+        styles: [...baseStyles, 'text-green-500'],
+    },
+    down: {
+        component: ChevronDoubleDownOutline,
+        styles: [...baseStyles, 'text-red-500'],
+    },
+    equal: {
+        component: MenuAlt4Outline,
+        styles: [...baseStyles, 'text-yellow-500'],
+    },
 }
 
 export const Arrow = ({ direction }: ArrowProps) => {

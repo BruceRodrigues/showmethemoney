@@ -7,6 +7,8 @@ export interface PillProps {
 
 //prettier-ignore
 const styles = [
+    'pill',
+
     //Border
     'rounded-xl',
     'py-3',

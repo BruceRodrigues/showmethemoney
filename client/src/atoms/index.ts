@@ -1,5 +1,5 @@
 export * from './Arrow'
-export * from './Card'
+export * from './Card/Card'
 export * from './Grid'
 export * from './Heading'
 export * from './Pill'
