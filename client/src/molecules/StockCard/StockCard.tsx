@@ -10,7 +10,7 @@ import {
     Text,
 } from '../../atoms'
 
-interface StockCardProps extends React.HTMLProps<HTMLDivElement> {
+export interface StockCardProps extends React.HTMLProps<HTMLDivElement> {
     name: string
     symbol: string
     amount: number
