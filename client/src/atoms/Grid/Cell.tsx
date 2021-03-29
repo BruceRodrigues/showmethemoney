@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '../../utils'
 
-interface CellProps extends React.HTMLProps<HTMLDivElement> {
+export interface CellProps extends React.HTMLProps<HTMLDivElement> {
     sm?: number
     md?: number
     lg?: number

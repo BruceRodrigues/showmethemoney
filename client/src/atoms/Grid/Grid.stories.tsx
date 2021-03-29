@@ -1,6 +1,7 @@
 import React from 'react'
+import { Story } from '../../utils'
 import { Cell } from './Cell'
-import { Grid } from './Grid'
+import { Grid, GridProps } from './Grid'
 
 export default { title: 'Atoms/Grid' }
 
@@ -29,7 +30,7 @@ const Content = ({
     </Cell>
 )
 
-const Template = ({ ...args }) => (
+const Template: Story<GridProps> = (args: GridProps) => (
     <Grid {...args}>
         <Content>sm=1 md=1 lg=1</Content>
         <Content>sm=1 md=1 lg=1</Content>

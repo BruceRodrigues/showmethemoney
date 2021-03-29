@@ -1,9 +1,10 @@
 import React from 'react'
-import { Text } from './Text'
+import { Story } from '../../utils'
+import { Text, TextProps } from './Text'
 
 export default { title: 'Atoms/Text' }
 
-const Template = ({ ...args }) => (
+const Template: Story<TextProps> = (args: TextProps) => (
     <Text {...args}>The quick brown fox jumps over the lazy dog.</Text>
 )
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '../../utils/styles'
 
-interface GridProps extends React.HTMLProps<HTMLDivElement> {
+export interface GridProps extends React.HTMLProps<HTMLDivElement> {
     sm?: number
     md?: number
     lg?: number

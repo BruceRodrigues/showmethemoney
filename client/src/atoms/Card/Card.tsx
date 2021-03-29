@@ -3,7 +3,7 @@ import { css } from '../../utils'
 
 export type Color = 'red' | 'green' | 'yellow' | 'blue'
 
-interface CardProps {
+export interface CardProps {
     color?: Color
     children: React.ReactNode
 }

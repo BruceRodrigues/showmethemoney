@@ -6,9 +6,9 @@ import {
 import React from 'react'
 import { css } from '../../utils'
 
-type Direction = 'up' | 'down' | 'equal'
+export type Direction = 'up' | 'down' | 'equal'
 
-interface ArrowProps {
+export interface ArrowProps {
     direction: Direction
 }
 
