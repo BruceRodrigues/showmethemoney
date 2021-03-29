@@ -4,6 +4,7 @@ import {
     Card,
     Cell,
     Color,
+    Direction,
     Grid,
     Heading,
     Pill,
@@ -21,13 +22,13 @@ export interface StockCardProps extends React.HTMLProps<HTMLDivElement> {
 const calcProps = (
     initialValue: number,
     currentValue: number
-): { direction: string; color: Color } => {
+): { direction: Direction; color: Color } => {
     const props =
         initialValue < currentValue
-            ? { direction: 'up', color: 'green' }
+            ? { direction: 'up' as Direction, color: 'green' as Color }
             : initialValue === currentValue
-            ? { direction: 'equal', color: 'yellow' }
-            : { direction: 'down', color: 'red' }
+            ? { direction: 'equal' as Direction, color: 'yellow' as Color }
+            : { direction: 'down' as Direction, color: 'red' as Color }
     return props
 }
 
@@ -39,7 +40,7 @@ export const StockCard = ({
     initialValue,
 }: StockCardProps) => {
     const props = calcProps(initialValue, currentValue)
-    const total = (currentValue * amount - initialValue * amount).toFixed(2)
+    const total = +(currentValue * amount - initialValue * amount).toFixed(2)
 
     return (
         <Card color={props.color}>

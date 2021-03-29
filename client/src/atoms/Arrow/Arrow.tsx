@@ -6,7 +6,7 @@ import {
 import React from 'react'
 import { css } from '../../utils'
 
-type Direction = 'up' | 'down' | 'equal'
+export type Direction = 'up' | 'down' | 'equal'
 
 export interface ArrowProps {
     direction: Direction
