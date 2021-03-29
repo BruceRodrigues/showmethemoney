@@ -1,9 +1,10 @@
 import React from 'react'
+import { Story } from '../../utils'
 import { Arrow, ArrowProps } from './Arrow'
 
 export default { title: 'Atoms/Arrow' }
 
-const Template = (args: ArrowProps) => <Arrow {...args} />
+const Template: Story<ArrowProps> = (args: ArrowProps) => <Arrow {...args} />
 
 export const Up = Template.bind({})
 Up.args = {

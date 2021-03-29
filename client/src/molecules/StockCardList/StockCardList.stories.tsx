@@ -1,9 +1,12 @@
 import React from 'react'
+import { Story } from '../../utils'
 import { StockCardList, StockCardListProps } from './StockCardList'
 
 export default { title: 'Molecules/StockCardList' }
 
-const Template = (args: StockCardListProps) => <StockCardList {...args} />
+const Template: Story<StockCardListProps> = (args: StockCardListProps) => (
+    <StockCardList {...args} />
+)
 
 const item = {
     name: 'Oi LTDA',

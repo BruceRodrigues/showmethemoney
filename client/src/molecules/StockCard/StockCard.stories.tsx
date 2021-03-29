@@ -1,9 +1,12 @@
 import React from 'react'
+import { Story } from '../../utils'
 import { StockCard, StockCardProps } from './StockCard'
 
 export default { title: 'Molecules/StockCard' }
 
-const Template = (args: StockCardProps) => <StockCard {...args} />
+const Template: Story<StockCardProps> = (args: StockCardProps) => (
+    <StockCard {...args} />
+)
 
 export const basic = Template.bind({})
 basic.args = {
