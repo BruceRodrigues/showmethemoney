@@ -2,7 +2,7 @@ import React from 'react'
 import { StockCard, StockCardProps } from '../'
 import { Cell, Grid } from '../../atoms'
 
-interface StockCardListProps {
+export interface StockCardListProps {
     items: StockCardProps[]
 }
 

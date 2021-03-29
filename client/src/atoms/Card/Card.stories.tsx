@@ -1,9 +1,9 @@
 import React from 'react'
-import { Card } from './Card'
+import { Card, CardProps } from './Card'
 
 export default { title: 'Atoms/Card' }
 
-const Template = ({ ...args }) => <Card {...args} />
+const Template = (args: CardProps) => <Card {...args} />
 
 export const Red = Template.bind({})
 Red.args = {

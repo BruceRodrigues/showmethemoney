@@ -3,7 +3,7 @@ import { css } from '../../utils'
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
 
-interface HeadingProps extends React.HTMLProps<HTMLElement> {
+export interface HeadingProps extends React.HTMLProps<HTMLElement> {
     level: HeadingLevel
 }
 
