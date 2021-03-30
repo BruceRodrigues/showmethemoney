@@ -3,7 +3,7 @@ import { css } from '../../utils'
 
 type FontSize = 'xs' | 'sm' | 'md' | 'lg'
 
-interface TextProps extends Omit<React.HTMLProps<HTMLElement>, 'size'> {
+export interface TextProps extends Omit<React.HTMLProps<HTMLElement>, 'size'> {
     variant?: 'p' | 'span'
     size?: FontSize
 }
