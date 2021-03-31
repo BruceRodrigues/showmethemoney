@@ -1,5 +1,6 @@
 export * from './Arrow'
 export * from './Card/Card'
+export * from './Container'
 export * from './Grid'
 export * from './Heading'
 export * from './Pill'

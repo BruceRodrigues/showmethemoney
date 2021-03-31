@@ -59,7 +59,7 @@ describe('StockCard component', () => {
             />
         )
 
-        const expectedTotal = (1 * 10 - 1.5 * 10).toFixed(2)
+        const expectedTotal = +(1 * 10 - 1.5 * 10).toFixed(2)
 
         expect(getByText(expectedTotal)).toBeInTheDocument()
     })
