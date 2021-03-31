@@ -26,7 +26,7 @@ describe('Grid component', () => {
         )
         const grid = container.getElementsByClassName('grid')
         expect(grid.length).toBe(1)
-        expect(grid[0]).toHaveClass('gap-0')
+        expect(grid[0]).toHaveClass('gap-x-0 gap-y-0')
     })
 
     it('Should render a grid with the same amount of columns for every breakpoint when only sm is passed', () => {

@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-    Arrow,
     Card,
     Cell,
     Color,
@@ -18,6 +17,8 @@ export interface StockCardProps extends React.HTMLProps<HTMLDivElement> {
     currentValue: number
     initialValue: number
 }
+
+const textStyles = ['w-full', 'truncate', 'text-right']
 
 const calcProps = (
     initialValue: number,
@@ -48,12 +49,13 @@ export const StockCard = ({
                 <Cell>
                     <Heading level={5}>{symbol}</Heading>
                     <div className="flex items-center gap-3">
-                        <Arrow direction={props.direction} />
                         <Pill value={total} />
                     </div>
                 </Cell>
                 <div className="flex flex-col items-end justify-around">
-                    <Text size="xs">{name}</Text>
+                    <Text classes={textStyles} size="xs">
+                        {name}
+                    </Text>
                     <Text size="sm">{initialValue}</Text>
                     <Text size="sm">{amount}</Text>
                 </div>
