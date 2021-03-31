@@ -16,9 +16,11 @@ describe('Pill component', () => {
         expect(getByText('-1', { selector: 'span' })).toHaveClass('bg-red-500')
     })
 
-    it('Should render with negative styles if value is 0', () => {
+    it('Should render with equal styles if value is 0', () => {
         const { getByText } = render(<Pill value={0} />)
 
-        expect(getByText('0', { selector: 'span' })).toHaveClass('bg-red-500')
+        expect(getByText('0', { selector: 'span' })).toHaveClass(
+            'bg-yellow-500'
+        )
     })
 })
