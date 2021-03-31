@@ -16,13 +16,10 @@ describe('StockCard component', () => {
         )
 
         const card = container.getElementsByClassName('card')
-        const arrow = container.getElementsByClassName('arrow')
         const pill = container.getElementsByClassName('pill')
         expect(card.length).toBe(1)
-        expect(arrow.length).toBe(1)
         expect(pill.length).toBe(1)
         expect(card[0]).toHaveClass('border-green-500')
-        expect(arrow[0]).toHaveClass('text-green-500')
         expect(pill[0]).toHaveClass('bg-green-500')
     })
 
@@ -38,13 +35,10 @@ describe('StockCard component', () => {
         )
 
         const card = container.getElementsByClassName('card')
-        const arrow = container.getElementsByClassName('arrow')
         const pill = container.getElementsByClassName('pill')
         expect(card.length).toBe(1)
-        expect(arrow.length).toBe(1)
         expect(pill.length).toBe(1)
         expect(card[0]).toHaveClass('border-red-500')
-        expect(arrow[0]).toHaveClass('text-red-500')
         expect(pill[0]).toHaveClass('bg-red-500')
     })
 
@@ -59,7 +53,7 @@ describe('StockCard component', () => {
             />
         )
 
-        const expectedTotal = (1 * 10 - 1.5 * 10).toFixed(2)
+        const expectedTotal = +(1 * 10 - 1.5 * 10).toFixed(2)
 
         expect(getByText(expectedTotal)).toBeInTheDocument()
     })
