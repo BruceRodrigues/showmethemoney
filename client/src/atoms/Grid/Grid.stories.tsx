@@ -51,4 +51,5 @@ Basic.args = {
     md: 4,
     lg: 6,
     gap: 1,
+    autoFit: false,
 }
