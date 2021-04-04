@@ -1,12 +1,14 @@
 import { GetStaticProps } from 'next'
 import React from 'react'
-import { Container } from '../atoms'
+import { Container, Content, Header } from '../atoms'
 import { StockCardList, StockCardProps } from '../molecules'
 export default function Home({ stocks }: { stocks: StockCardProps[] }) {
     return (
         <Container>
-            <h1>SHOW ME THE MONEY</h1>
-            <StockCardList items={stocks} />
+            <Header />
+            <Content>
+                <StockCardList items={stocks} />
+            </Content>
         </Container>
     )
 }

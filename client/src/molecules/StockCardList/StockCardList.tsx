@@ -7,9 +7,9 @@ export interface StockCardListProps {
 }
 
 export const StockCardList = ({ items }: StockCardListProps) => (
-    <Grid sm={1} md={3} lg={4} horizontalGap={5} verticalGap={5}>
+    <Grid autoFit horizontalGap={5} verticalGap={5}>
         {items.map((item, index) => (
-            <Cell key={index}>
+            <Cell key={index} justify="center">
                 <StockCard {...item} />
             </Cell>
         ))}
