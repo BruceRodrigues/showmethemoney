@@ -3,7 +3,7 @@ import { css } from '../../utils'
 
 export type Color = 'red' | 'green' | 'yellow' | 'blue'
 
-export interface CardProps {
+export interface CardProps extends React.HTMLProps<HTMLDivElement> {
     color?: Color
     children: React.ReactNode
 }
@@ -21,15 +21,18 @@ const base = [
     'inline-flex',
     'w-64',
     'h-28',
+    'cursor-pointer',
 ]
 
-const styles = {
-    red: [...base, 'border-red-500', 'ring-red-500'],
-    blue: [...base, 'border-blue-500', 'ring-blue-500'],
-    yellow: [...base, 'border-yellow-500', 'ring-yellow-500'],
-    green: [...base, 'border-green-500', 'ring-green-500'],
-}
+const styles = (color: Color) => [
+    ...base,
+    `border-${color}-500`,
+    `ring-${color}-500`,
+    `hover:bg-${color}-100`,
+]
 
-export const Card = ({ color = 'blue', children }: CardProps) => (
-    <div className={css(styles[color])}>{children}</div>
+export const Card = ({ color = 'blue', children, ...rest }: CardProps) => (
+    <div className={css(styles(color))} {...rest}>
+        {children}
+    </div>
 )
