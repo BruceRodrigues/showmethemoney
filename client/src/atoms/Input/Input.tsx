@@ -6,7 +6,7 @@ export interface InputProps extends React.HTMLProps<HTMLInputElement> {
     name: string
 }
 
-const styles = ['flex', 'flex-col']
+const styles = ['flex', 'flex-col', 'w-full']
 
 const labelStyles = ['text-gray-400', 'text-xs', 'mb-1']
 

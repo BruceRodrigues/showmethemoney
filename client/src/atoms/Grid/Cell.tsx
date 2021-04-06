@@ -20,6 +20,7 @@ const styles = (
     `md:col-span-${md}`,
     `lg:col-span-${lg}`,
     `justify-self-${justify}`,
+    'w-full',
 ]
 
 export const Cell = ({
