@@ -10,7 +10,15 @@ const styles = ['flex', 'flex-col', 'w-full']
 
 const labelStyles = ['text-gray-400', 'text-xs', 'mb-1']
 
-const inputStyles = ['ring-2', 'ring-indigo-300', 'rounded']
+const inputStyles = [
+    'ring-2',
+    'ring-indigo-300',
+    'rounded',
+    'py-2',
+    'px-3',
+    'text-sm',
+    'text-gray-500',
+]
 
 export const Input = ({ label, name, ...rest }: InputProps) => {
     return (
