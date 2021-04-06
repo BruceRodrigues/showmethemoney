@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Cell, Grid, Input } from '../../atoms'
+import { Button, Cell, Grid, Input } from '../../atoms'
 
 export interface StockFormProps {
     onSubmit(data: StockFormData): void
@@ -31,8 +31,8 @@ export const StockForm = ({ onSubmit }: StockFormProps) => {
                 <Cell>
                     <Input {...register('price')} label="Price" />
                 </Cell>
-                <Cell>
-                    <input type="submit" />
+                <Cell sm={2}>
+                    <Button label="Add" type="submit" fullWidth />
                 </Cell>
             </Grid>
         </form>

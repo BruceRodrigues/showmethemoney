@@ -19,4 +19,6 @@ const item = {
 export const basic = Template.bind({})
 basic.args = {
     items: Array.of(item, item, item, item, item),
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    onClick: () => {},
 }
