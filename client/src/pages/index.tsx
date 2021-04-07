@@ -1,13 +1,18 @@
 import { GetStaticProps } from 'next'
+import { useRouter } from 'next/dist/client/router'
 import React from 'react'
 import { Container, Content, Header } from '../atoms'
 import { StockCardList, StockCardProps } from '../molecules'
 export default function Home({ stocks }: { stocks: StockCardProps[] }) {
+    const router = useRouter()
     return (
         <Container>
             <Header />
             <Content>
-                <StockCardList items={stocks} />
+                <StockCardList
+                    items={stocks}
+                    onClick={() => router.push('/add')}
+                />
             </Content>
         </Container>
     )
