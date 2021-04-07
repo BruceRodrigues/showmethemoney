@@ -1,13 +1,16 @@
 import React from 'react'
 import { css } from '../../utils/styles'
+import { GRIDS } from './constants'
+
+export type Columns = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 
 export interface GridProps extends React.HTMLProps<HTMLDivElement> {
-    sm?: number
-    md?: number
-    lg?: number
+    sm?: Columns
+    md?: Columns
+    lg?: Columns
     gap?: number
-    verticalGap?: number
-    horizontalGap?: number
+    verticalGap?: Columns
+    horizontalGap?: Columns
     autoFit?: boolean
 }
 
@@ -18,10 +21,10 @@ const styles = (verticalGap?: number, horizontalGap?: number) => [
     `gap-y-${verticalGap}`,
 ]
 
-const stylesGridColumns = (sm?: number, md?: number, lg?: number) => [
-    `sm:grid-cols-${sm}`,
-    `md:grid-cols-${md}`,
-    `lg:grid-cols-${lg}`,
+const stylesGridColumns = (sm: Columns, md: Columns, lg: Columns) => [
+    `${GRIDS[sm].gridSM}`,
+    `${GRIDS[md].gridMD}`,
+    `${GRIDS[lg].gridLG}`,
 ]
 
 const stylesGridAutoFit = () => [`grid-cols-auto-fit-250`]
@@ -35,9 +38,9 @@ export const Grid = ({
     horizontalGap = 0,
     autoFit = false,
 }: GridProps) => {
-    const mobile = sm || md || lg
-    const tablet = md || sm || lg
-    const desktop = lg || sm || md
+    const mobile = sm || md || (lg as Columns)
+    const tablet = md || sm || (lg as Columns)
+    const desktop = lg || sm || (md as Columns)
     const columnStyles = autoFit
         ? stylesGridAutoFit()
         : stylesGridColumns(mobile, tablet, desktop)

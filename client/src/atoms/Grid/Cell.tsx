@@ -1,25 +1,27 @@
 import React from 'react'
 import { css } from '../../utils'
+import { ALIGNMENTS, GRIDS } from './constants'
+import { Columns } from './Grid'
 
 export type JustifyPosition = 'start' | 'end' | 'center'
 
 export interface CellProps extends React.HTMLProps<HTMLDivElement> {
-    sm?: number
-    md?: number
-    lg?: number
+    sm?: Columns
+    md?: Columns
+    lg?: Columns
     justify?: JustifyPosition
 }
 
 const styles = (
-    sm?: number,
-    md?: number,
-    lg?: number,
-    justify?: JustifyPosition
+    sm: Columns,
+    md: Columns,
+    lg: Columns,
+    justify: JustifyPosition
 ) => [
-    `sm:col-span-${sm}`,
-    `md:col-span-${md}`,
-    `lg:col-span-${lg}`,
-    `justify-self-${justify}`,
+    `${GRIDS[sm].cellSM}`,
+    `${GRIDS[md].cellMD}`,
+    `${GRIDS[lg].cellLG}`,
+    ALIGNMENTS[justify],
     'w-full',
 ]
 
