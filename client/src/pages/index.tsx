@@ -19,7 +19,7 @@ export default function Home({ stocks }: { stocks: StockCardProps[] }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const response = await fetch(`http://localhost:3333/stocks`)
+    const response = await fetch(`http://server:3333/stocks`)
     const stocks = await response.json()
     return {
         props: {
