@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/dist/client/router'
 import React from 'react'
 import { Container, Content, Header } from '../atoms'
@@ -18,8 +18,8 @@ export default function Home({ stocks }: { stocks: StockCardProps[] }) {
     )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-    const response = await fetch(`http://server:3333/stocks`)
+export const getServerSideProps: GetServerSideProps = async () => {
+    const response = await fetch(`http://localhost:3333/api/stocks`)
     const stocks = await response.json()
     return {
         props: {

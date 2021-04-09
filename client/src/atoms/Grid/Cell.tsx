@@ -33,9 +33,9 @@ export const Cell = ({
     justify = 'start',
     ...rest
 }: CellProps) => {
-    const mobile = sm || md || lg
-    const tablet = md || sm || lg
-    const desktop = lg || sm || md
+    const mobile = sm || md || (lg as Columns)
+    const tablet = md || sm || (lg as Columns)
+    const desktop = lg || sm || (md as Columns)
     return (
         <div
             className={css(styles(mobile, tablet, desktop, justify))}
