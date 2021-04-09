@@ -6,7 +6,7 @@ export interface ContentProps {
     children: React.ReactNode
 }
 
-const styles = ['rounded-md', 'border-solid', 'border-2', 'p-5']
+const styles = ['rounded-md', 'p-5', 'shadow-2xl']
 
 export const Content = ({
     children,

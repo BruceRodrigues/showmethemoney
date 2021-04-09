@@ -13,11 +13,13 @@ export default function AddPage() {
     }
 
     return (
-        <Container>
+        <>
             <Header />
-            <Content>
-                <StockForm onSubmit={handleSumit} />
-            </Content>
-        </Container>
+            <Container>
+                <Content>
+                    <StockForm onSubmit={handleSumit} />
+                </Content>
+            </Container>
+        </>
     )
 }
