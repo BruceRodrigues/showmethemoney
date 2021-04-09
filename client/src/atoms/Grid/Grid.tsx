@@ -37,6 +37,7 @@ export const Grid = ({
     verticalGap = 0,
     horizontalGap = 0,
     autoFit = false,
+    className,
 }: GridProps) => {
     const mobile = sm || md || (lg as Columns)
     const tablet = md || sm || (lg as Columns)
@@ -46,10 +47,10 @@ export const Grid = ({
         : stylesGridColumns(mobile, tablet, desktop)
     return (
         <div
-            className={css([
-                ...styles(verticalGap, horizontalGap),
-                ...columnStyles,
-            ])}
+            className={
+                css([...styles(verticalGap, horizontalGap), ...columnStyles]) +
+                className
+            }
         >
             {children}
         </div>

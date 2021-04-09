@@ -7,5 +7,6 @@
 @layer base {
     body {
         @apply bg-gray-50;
+        @apply mb-10;
     }
 }

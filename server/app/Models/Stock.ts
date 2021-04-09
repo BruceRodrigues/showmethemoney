@@ -20,6 +20,8 @@ export default class Stock extends BaseModel {
   @column()
   public amount: number
 
-  @column()
+  @column({
+    serializeAs: 'initialValue',
+  })
   public price: number
 }
