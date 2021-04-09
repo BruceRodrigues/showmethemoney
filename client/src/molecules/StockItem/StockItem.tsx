@@ -1,5 +1,5 @@
 import React from 'react'
-import { Content, Pill } from '../../atoms'
+import { Content, Grid, Pill } from '../../atoms'
 import { css } from '../../utils'
 
 export interface StockItemProps {
@@ -17,7 +17,7 @@ const columnLabelStyles = [
     'mb-2',
     'text-xs',
 ]
-const columnValueStyles = ['font-semibold', 'font-mono']
+const columnValueStyles = ['font-semibold', 'font-mono', 'overflow-ellipsis']
 
 export const Column = ({
     label,
@@ -52,16 +52,18 @@ export const StockItem = ({
     const total = +(currentValue * amount - initialValue * amount).toFixed(2)
     const positive = total > 0
     return (
-        <Content className="flex justify-between">
-            <Column label="Symbol" value={symbol} positive={positive} />
-            <Column label="Name" value={name} positive={positive} />
-            <Column label="Amount" value={amount} positive={positive} />
-            <Column
-                label="Initial value"
-                value={initialValue}
-                positive={positive}
-            />
-            <Pill value={total} />
+        <Content>
+            <Grid sm={5}>
+                <Column label="Symbol" value={symbol} positive={positive} />
+                <Column label="Name" value={name} positive={positive} />
+                <Column label="Amount" value={amount} positive={positive} />
+                <Column
+                    label="Initial value"
+                    value={initialValue}
+                    positive={positive}
+                />
+                <Pill value={total} />
+            </Grid>
         </Content>
     )
 }

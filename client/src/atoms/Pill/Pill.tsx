@@ -16,6 +16,7 @@ const styles = [
 
     //Text
     'text-white',
+    'text-center'
 ]
 
 const POSITIVE_BG = 'bg-green-500'

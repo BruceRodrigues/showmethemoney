@@ -24,9 +24,10 @@ export default function Home({ stocks }: { stocks: StockItemProps[] }) {
 export const getServerSideProps: GetServerSideProps = async () => {
     const response = await fetch(`http://localhost:3333/api/stocks`)
     const stocks = await response.json()
+
     return {
         props: {
-            stocks,
+            stocks: stocks.map((item: any) => ({ ...item, currentValue: 10 })),
         },
     }
 }
