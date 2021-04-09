@@ -1,20 +1,21 @@
 import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/dist/client/router'
 import React from 'react'
-import { Container, Content, Header } from '../atoms'
-import { StockCardList, StockCardProps } from '../molecules'
-export default function Home({ stocks }: { stocks: StockCardProps[] }) {
+import { Button, Container, Header } from '../atoms'
+import { StockItemProps, StockList } from '../molecules'
+
+export default function Home({ stocks }: { stocks: StockItemProps[] }) {
     const router = useRouter()
     return (
         <>
             <Header />
             <Container>
-                <Content>
-                    <StockCardList
-                        items={stocks}
-                        onClick={() => router.push('/add')}
-                    />
-                </Content>
+                <Button
+                    label="Add"
+                    fullWidth
+                    onClick={() => router.push('/add')}
+                />
+                <StockList items={stocks} />
             </Container>
         </>
     )

@@ -4,7 +4,7 @@ describe('styles', () => {
     it('Should join classes without condition', () => {
         const styles = ['test1', 'test2', 'test3']
         const result = css(styles)
-        expect(result).toBe('test1 test2 test3')
+        expect(result).toBe('test1 test2 test3 ')
     })
 
     it('Should join classes with true condition', () => {
