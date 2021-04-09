@@ -1,14 +1,22 @@
 import { useRouter } from 'next/dist/client/router'
 import React from 'react'
 import { Container, Content, Header } from '../../atoms'
-import { StockForm } from '../../molecules'
+import { api } from '../../config'
+import { StockForm, StockFormData } from '../../molecules'
 export default function AddPage() {
     const router = useRouter()
+
+    const handleSumit = (data: StockFormData) => {
+        api.post('http://localhost:3333/api/stocks', data).then(() =>
+            router.push('/')
+        )
+    }
+
     return (
         <Container>
             <Header />
             <Content>
-                <StockForm onSubmit={() => router.push('/')} />
+                <StockForm onSubmit={handleSumit} />
             </Content>
         </Container>
     )

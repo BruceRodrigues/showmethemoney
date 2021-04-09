@@ -1,25 +1,27 @@
 import React from 'react'
 import { css } from '../../utils'
+import { ALIGNMENTS, GRIDS } from './constants'
+import { Columns } from './Grid'
 
 export type JustifyPosition = 'start' | 'end' | 'center'
 
 export interface CellProps extends React.HTMLProps<HTMLDivElement> {
-    sm?: number
-    md?: number
-    lg?: number
+    sm?: Columns
+    md?: Columns
+    lg?: Columns
     justify?: JustifyPosition
 }
 
 const styles = (
-    sm?: number,
-    md?: number,
-    lg?: number,
-    justify?: JustifyPosition
+    sm: Columns,
+    md: Columns,
+    lg: Columns,
+    justify: JustifyPosition
 ) => [
-    `sm:col-span-${sm}`,
-    `md:col-span-${md}`,
-    `lg:col-span-${lg}`,
-    `justify-self-${justify}`,
+    `${GRIDS[sm].cellSM}`,
+    `${GRIDS[md].cellMD}`,
+    `${GRIDS[lg].cellLG}`,
+    ALIGNMENTS[justify],
     'w-full',
 ]
 
@@ -31,9 +33,9 @@ export const Cell = ({
     justify = 'start',
     ...rest
 }: CellProps) => {
-    const mobile = sm || md || lg
-    const tablet = md || sm || lg
-    const desktop = lg || sm || md
+    const mobile = sm || md || (lg as Columns)
+    const tablet = md || sm || (lg as Columns)
+    const desktop = lg || sm || (md as Columns)
     return (
         <div
             className={css(styles(mobile, tablet, desktop, justify))}

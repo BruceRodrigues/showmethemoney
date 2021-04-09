@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story } from '../../utils'
 import { Cell } from './Cell'
-import { Grid, GridProps } from './Grid'
+import { Columns, Grid, GridProps } from './Grid'
 
 export default { title: 'Atoms/Grid' }
 
@@ -12,9 +12,9 @@ const Content = ({
     lg,
 }: {
     children: React.ReactNode
-    sm?: number
-    md?: number
-    lg?: number
+    sm?: Columns
+    md?: Columns
+    lg?: Columns
 }) => (
     <Cell
         style={{
