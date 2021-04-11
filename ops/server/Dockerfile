@@ -13,6 +13,9 @@ COPY ./server .
 
 RUN yarn build
 
+#Workaround
+RUN yarn add sqlite3
+
 EXPOSE 3333
 
 CMD [ "yarn", "dev" ]

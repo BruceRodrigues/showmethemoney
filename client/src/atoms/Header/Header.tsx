@@ -4,8 +4,8 @@ import React from 'react'
 import LogoSVG from './logo.svg'
 
 export const Header = () => (
-    <div className="relative flex justify-center" style={{ height: '50vh' }}>
-        <div className=" absolute h-full w-full origin-top-left transform -skew-y-12 bg-gradient-to-r from-green-400 to-blue-700"></div>
+    <div className="relative flex justify-center" style={{ height: '550px' }}>
+        <div className=" absolute h-full w-full origin-top-left transform -skew-y-6 bg-gradient-to-r from-green-400 to-blue-700"></div>
         <div className="absolute mt-12">
             <LogoSVG
                 style={{

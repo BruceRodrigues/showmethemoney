@@ -28,7 +28,7 @@ export const Column = ({
     value: string | number
     positive: boolean
 }) => (
-    <div className="flex flex-col">
+    <div className="column flex flex-col">
         <span className={css(columnLabelStyles)}>{label}</span>
         <span
             className={css(columnValueStyles, {

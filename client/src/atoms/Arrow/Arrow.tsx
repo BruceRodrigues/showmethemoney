@@ -1,8 +1,8 @@
 import {
-    ChevronDoubleDownOutline,
-    ChevronDoubleUpOutline,
-    MenuAlt4Outline,
-} from 'heroicons-react'
+    ChevronDoubleDownIcon,
+    ChevronDoubleUpIcon,
+    MenuAlt4Icon,
+} from '@heroicons/react/outline'
 import React from 'react'
 import { css } from '../../utils'
 
@@ -16,15 +16,15 @@ const baseStyles = ['arrow']
 
 const Arrows = {
     up: {
-        component: ChevronDoubleUpOutline,
+        component: ChevronDoubleUpIcon,
         styles: [...baseStyles, 'text-green-500'],
     },
     down: {
-        component: ChevronDoubleDownOutline,
+        component: ChevronDoubleDownIcon,
         styles: [...baseStyles, 'text-red-500'],
     },
     equal: {
-        component: MenuAlt4Outline,
+        component: MenuAlt4Icon,
         styles: [...baseStyles, 'text-yellow-500'],
     },
 }
