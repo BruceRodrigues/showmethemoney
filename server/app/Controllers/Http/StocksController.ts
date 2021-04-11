@@ -15,4 +15,9 @@ export default class StocksController {
   public async get({ params }: HttpContextContract) {
     return await Stock.find(params.id)
   }
+
+  public async edit({ request }: HttpContextContract) {
+    const data = request.post()
+    return await Stock.updateOrCreate({ id: data.id }, { ...data })
+  }
 }

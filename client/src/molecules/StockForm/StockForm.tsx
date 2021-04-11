@@ -10,7 +10,7 @@ export interface StockFormProps {
 }
 
 export interface StockFormData {
-    id: number
+    id?: number
     symbol: string
     name: string
     amount: number
@@ -24,7 +24,6 @@ interface InputControllerProps extends InputProps {
 }
 
 const defaultForm = {
-    id: -1,
     amount: 0,
     name: '',
     price: 0,
