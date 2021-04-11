@@ -45,22 +45,19 @@ const InputController = ({
         render={({
             field: { name, onChange, onBlur, value },
             fieldState: { error },
-        }) => {
-            //TODO Issue https://github.com/BruceRodrigues/showmethemoney/issues/45
-            console.log(error)
-            return (
-                <Input
-                    name={name}
-                    label={label}
-                    onChange={onChange}
-                    onBlur={onBlur}
-                    value={value}
-                    type={type}
-                    maxLength={maxLength}
-                    uppercase={uppercase}
-                />
-            )
-        }}
+        }) => (
+            <Input
+                name={name}
+                label={label}
+                onChange={onChange}
+                onBlur={onBlur}
+                value={value}
+                error={error?.message}
+                type={type}
+                maxLength={maxLength}
+                uppercase={uppercase}
+            />
+        )}
     />
 )
 
