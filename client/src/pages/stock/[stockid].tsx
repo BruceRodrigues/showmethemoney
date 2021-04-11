@@ -23,13 +23,11 @@ export default function StockPage({ stock }: { stock: StockFormData }) {
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     const { stockid } = query
-    const response = await api.get<StockFormData>(
-        `http://server:3333/api/stocks/${stockid}`
-    )
+    const response = await api.get(`http://server:3333/api/stocks/${stockid}`)
 
     return {
         props: {
-            stock: response.data,
+            stock: { ...response.data, price: response.data.initialValue },
         },
     }
 }

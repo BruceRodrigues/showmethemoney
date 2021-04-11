@@ -26,7 +26,7 @@ interface InputControllerProps extends InputProps {
 const defaultForm = {
     id: -1,
     amount: 0,
-    name: 'ASD',
+    name: '',
     price: 0,
     symbol: '',
 }
