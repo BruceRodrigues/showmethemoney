@@ -11,3 +11,9 @@ basic.args = {
     name: 'firstName',
     label: 'First name',
 }
+
+export const withError = Template.bind({})
+withError.args = {
+    ...basic.args,
+    error: 'Error message',
+}

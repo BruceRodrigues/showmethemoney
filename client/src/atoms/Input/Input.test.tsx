@@ -14,4 +14,14 @@ describe('Input Component', () => {
         expect(labelComponent.length).toBe(1)
         expect(labelComponent[0]).toHaveClass('text-gray-400 text-xs mb-1')
     })
+
+    it('should present error message', () => {
+        const { getByText } = render(
+            <Input label="label" name="name" error="error message" />
+        )
+
+        const inputElement = getByText('error message')
+        expect(inputElement).toBeInTheDocument()
+        expect(inputElement).toHaveClass('text-red-500')
+    })
 })

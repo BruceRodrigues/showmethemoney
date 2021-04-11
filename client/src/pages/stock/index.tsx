@@ -1,6 +1,6 @@
 import { useRouter } from 'next/dist/client/router'
 import React from 'react'
-import { Container, Content, Header } from '../../atoms'
+import { Content } from '../../atoms'
 import { api } from '../../config'
 import { StockForm, StockFormData } from '../../molecules'
 export default function AddPage() {
@@ -14,12 +14,9 @@ export default function AddPage() {
 
     return (
         <>
-            <Header />
-            <Container>
-                <Content>
-                    <StockForm onSubmit={handleSumit} />
-                </Content>
-            </Container>
+            <Content>
+                <StockForm onSubmit={handleSumit} />
+            </Content>
         </>
     )
 }

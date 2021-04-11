@@ -11,4 +11,13 @@ export default class StocksController {
     const body = request.post()
     await stock.fill(body).save()
   }
+
+  public async get({ params }: HttpContextContract) {
+    return await Stock.find(params.id)
+  }
+
+  public async edit({ request }: HttpContextContract) {
+    const data = request.post()
+    return await Stock.updateOrCreate({ id: data.id }, { ...data })
+  }
 }

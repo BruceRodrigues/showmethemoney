@@ -1,51 +1,73 @@
+import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { Control, Controller, useForm } from 'react-hook-form'
-import { Button, Cell, Grid, Input } from '../../atoms'
+import { Button, Cell, Grid, Input, InputProps } from '../../atoms'
+import { validator } from './validator'
 
 export interface StockFormProps {
     onSubmit(data: StockFormData): void
+    defaultValues?: StockFormData
 }
 
 export interface StockFormData {
+    id?: number
     symbol: string
     name: string
-    amount: string
-    price: string
+    amount: number
+    price: number
+}
+
+interface InputControllerProps extends InputProps {
+    control: Control<StockFormData>
+    name: keyof StockFormData
+    uppercase?: boolean
+}
+
+const defaultForm = {
+    amount: 0,
+    name: '',
+    price: 0,
+    symbol: '',
 }
 
 const InputController = ({
     control,
     name,
     label,
-}: {
-    control: Control<StockFormData>
-    name: keyof StockFormData
-    label: string
-}) => (
+    type = 'text',
+    maxLength,
+    uppercase,
+}: InputControllerProps) => (
     <Controller<StockFormData>
         control={control}
         name={name}
-        render={({ field: { name, onChange, onBlur, value } }) => (
+        render={({
+            field: { name, onChange, onBlur, value },
+            fieldState: { error },
+        }) => (
             <Input
                 name={name}
                 label={label}
                 onChange={onChange}
                 onBlur={onBlur}
                 value={value}
+                error={error?.message}
+                type={type}
+                maxLength={maxLength}
+                uppercase={uppercase}
             />
         )}
     />
 )
 
-export const StockForm = ({ onSubmit }: StockFormProps) => {
+export const StockForm = ({
+    onSubmit,
+    defaultValues = defaultForm,
+}: StockFormProps) => {
     const { handleSubmit, control } = useForm<StockFormData>({
         mode: 'onChange',
-        defaultValues: {
-            amount: '',
-            name: '',
-            price: '',
-            symbol: '',
-        },
+        resolver: yupResolver(validator),
+        defaultValues: defaultValues,
     })
 
     return (
@@ -56,6 +78,8 @@ export const StockForm = ({ onSubmit }: StockFormProps) => {
                         name="symbol"
                         label="Symbol"
                         control={control}
+                        maxLength={6}
+                        uppercase
                     />
                 </Cell>
                 <Cell sm={2}>
@@ -70,6 +94,7 @@ export const StockForm = ({ onSubmit }: StockFormProps) => {
                         name="amount"
                         label="Amount"
                         control={control}
+                        type="number"
                     />
                 </Cell>
                 <Cell>
@@ -77,6 +102,7 @@ export const StockForm = ({ onSubmit }: StockFormProps) => {
                         name="price"
                         label="Price"
                         control={control}
+                        type="number"
                     />
                 </Cell>
                 <Cell sm={2}>

@@ -27,5 +27,5 @@ const EQUAL_BG = 'bg-yellow-500'
 
 export const Pill = ({ value }: PillProps) => {
     const bg = value === 0 ? EQUAL_BG : value > 0 ? POSITIVE_BG : NEGATIVE_BG
-    return <span className={css([...styles, bg])}>{value}</span>
+    return <span className={css([...styles, bg])}>{`$ ${value}`}</span>
 }
