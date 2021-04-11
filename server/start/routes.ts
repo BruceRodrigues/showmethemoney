@@ -25,4 +25,5 @@ Route.get('/', async () => {
 })
 
 Route.get('/api/stocks', 'StocksController.index')
+Route.get('/api/stocks/:id', 'StocksController.get')
 Route.post('/api/stocks', 'StocksController.save')

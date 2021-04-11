@@ -37,7 +37,9 @@ describe('StockItem component', () => {
     it('should render the total value based on current value and amount', () => {
         const { getByText } = render(<StockItem {...props} />)
 
-        const total = getByText((123 * 0.97 - 123 * 0.95).toFixed(2) + '')
+        const total = getByText((123 * 0.97 - 123 * 0.95).toFixed(2), {
+            exact: false,
+        })
 
         expect(total).toBeInTheDocument()
     })

@@ -1262,6 +1262,11 @@
   resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-1.0.0.tgz#16a6147f665434b68f401f050a6cb1d68cf819bc"
   integrity sha512-BHu+zsJ37B8RsspItwn2yTrph1Jj+k8YhVGV/UmAbxjhphC+RPdYMKzAJm9kGtA526loPtP+FYQM9GdMYTe13Q==
 
+"@hookform/resolvers@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.2.0.tgz#7337e2a942412749f1dc1187385b8ba0c3b20506"
+  integrity sha512-L9wExG8ap5rRfA1v1o1J9s1FuBgFzx6wG8/dEqLBvOUfdB1AteqXgCuCi8E/W6pGieuwVWH01PwbuVngtGgohA==
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"

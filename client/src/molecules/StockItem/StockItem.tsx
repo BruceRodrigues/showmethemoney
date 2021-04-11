@@ -3,11 +3,13 @@ import { Content, Grid, Pill } from '../../atoms'
 import { css } from '../../utils'
 
 export interface StockItemProps {
+    id: number
     symbol: string
     name: string
     amount: number
     currentValue: number
     initialValue: number
+    onClick?(): void
 }
 
 const columnLabelStyles = [
@@ -48,11 +50,17 @@ export const StockItem = ({
     amount,
     currentValue,
     initialValue,
+    onClick,
 }: StockItemProps) => {
     const total = +(currentValue * amount - initialValue * amount).toFixed(2)
     const positive = total > 0
     return (
-        <Content>
+        <Content
+            onClick={onClick}
+            className={`cursor-pointer ${
+                positive ? 'hover:bg-green-200' : 'hover:bg-red-200'
+            }`}
+        >
             <Grid sm={5}>
                 <Column label="Symbol" value={symbol} positive={positive} />
                 <Column label="Name" value={name} positive={positive} />

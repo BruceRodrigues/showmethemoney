@@ -4,6 +4,7 @@ import { css } from '../../utils'
 export interface InputProps extends React.HTMLProps<HTMLInputElement> {
     label?: string
     name: string
+    uppercase?: boolean
 }
 
 const styles = ['flex', 'flex-col', 'w-full']
@@ -20,13 +21,21 @@ const inputStyles = [
     'text-gray-500',
 ]
 
-export const Input = ({ label, name, ...rest }: InputProps) => {
+export const Input = ({ label, name, uppercase, ...rest }: InputProps) => {
     return (
         <div className={css(styles)}>
             <label className={css(labelStyles)} htmlFor={name}>
                 {label}
             </label>
-            <input className={css(inputStyles)} name={name} {...rest} />
+            <input
+                className={css(inputStyles, {
+                    if: !!uppercase,
+                    true: 'uppercase',
+                    false: '',
+                })}
+                name={name}
+                {...rest}
+            />
         </div>
     )
 }
