@@ -1,1 +1,2 @@
-cd /opt/smtm/ops && docker-compose build
+cd /opt/smtm/ops
+docker-compose build
