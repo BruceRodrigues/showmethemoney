@@ -3,7 +3,7 @@ import { Content, Grid, Pill } from '../../atoms'
 import { css } from '../../utils'
 
 export interface StockItemProps {
-    id: number
+    id?: number
     symbol: string
     name: string
     amount: number

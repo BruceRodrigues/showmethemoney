@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/smtm
+hooks:
+  BeforeInstall:
+    - location: ops/aws/before-install.sh
+      timeout: 180
+      runas: root
+  AfterInstall:
+    - location: ops/aws/after-install.sh
+      timeout: 180
+      runas: root
+  ApplicationStart:
+    - location: ops/aws/boot.sh
+      timeout: 180
+      runas: root
