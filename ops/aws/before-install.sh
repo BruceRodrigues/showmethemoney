@@ -5,12 +5,13 @@ docker system prune -f
 docker rmi ops_client
 docker rmi ops_server
 
-touch .env
+rm ../server/.env
+touch ../server/.env
 
 add_parameter() {
     PARAM=$1
     PARAM_VALUE=$(aws --region sa-east-1 ssm get-parameter --name /SMTM/dev/${PARAM} --query Parameter.Value | sed -e 's/^"//' -e 's/"$//')
-    echo "$PARAM=$PARAM_VALUE" >> .env
+    echo "$PARAM=$PARAM_VALUE" >> ../server/.env
 }
 
 add_parameter PORT
