@@ -9,8 +9,6 @@ RUN yarn install --pure-lockfile
 
 COPY ./client .
 
-RUN yarn build
-
 EXPOSE 3000
 
 CMD [ "yarn", "dev" ]

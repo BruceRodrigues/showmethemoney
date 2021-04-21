@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:12-alpine as build
 
 WORKDIR /usr/src/app
 
@@ -7,11 +7,9 @@ COPY ./server/package.json .
 
 RUN apk add --no-cache git
 
-RUN yarn install
+RUN yarn install --pure-lockfile
 
 COPY ./server .
-
-RUN yarn build
 
 #Workaround
 RUN yarn add sqlite3
