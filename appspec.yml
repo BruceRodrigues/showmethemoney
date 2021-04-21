@@ -7,9 +7,6 @@ hooks:
   BeforeInstall:
     - location: ops/aws/before-install.sh
       timeout: 180
-  AfterInstall:
-    - location: ops/aws/after-install.sh
-      timeout: 600
   ApplicationStart:
     - location: ops/aws/boot.sh
       timeout: 600

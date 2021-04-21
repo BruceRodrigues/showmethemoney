@@ -8,8 +8,6 @@ services:
     ports:
       - 3333:3333
     container_name: server
-    volumes:
-      - ../server:/usr/src/app
   client:
     build:
       context: ../
@@ -19,5 +17,3 @@ services:
     container_name: client
     depends_on:
       - server
-    volumes:
-      - ../client:/usr/src/app

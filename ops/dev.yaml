@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  server:
+    volumes:
+      - ../server:/usr/src/app
+  client:
+    volumes:
+      - ../client:/usr/src/app
