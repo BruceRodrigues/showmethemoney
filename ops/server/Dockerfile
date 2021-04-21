@@ -14,6 +14,10 @@ COPY ./server .
 #Workaround
 RUN yarn add sqlite3
 
+RUN mkdir tmp/
+
+RUN node ace migration:run
+
 EXPOSE 3333
 
 CMD [ "yarn", "dev" ]
