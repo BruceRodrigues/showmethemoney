@@ -8,6 +8,12 @@ services:
     ports:
       - 3333:3333
     container_name: server
+    environment:
+      APP_KEY: ${SMTM_SERVER_APP_KEY}
+      PORT: ${SMTM_SERVER_PORT}
+      HOST: ${SMTM_SERVER_HOST}
+      NODE_ENV: ${SMTM_SERVER_NODE_ENV}
+      DB_CONNECTION: ${SMTM_SERVER_DB_CONNECTION}
   client:
     build:
       context: ../
