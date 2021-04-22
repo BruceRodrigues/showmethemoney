@@ -17,3 +17,9 @@ basic.args = {
     items: HEROES,
     name: 'hero',
 }
+
+export const withError = Template.bind({})
+withError.args = {
+    ...basic.args,
+    error: 'Error',
+}
