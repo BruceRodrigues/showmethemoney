@@ -10,9 +10,7 @@ export default function StockPage({ stock }: { stock: StockFormData }) {
     const handleSumit = (data: any) => {
         //TODO this should be removed when serializations are handled with a proper way
         delete data['initialValue']
-        api.put(`http://localhost:3333/api/stocks/${data.id}`, data).then(() =>
-            router.push('/')
-        )
+        api.put(`/stocks/${data.id}`, data).then(() => router.push('/'))
     }
 
     return (
@@ -26,7 +24,7 @@ export default function StockPage({ stock }: { stock: StockFormData }) {
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     const { stockid } = query
-    const response = await api.get(`http://server:3333/api/stocks/${stockid}`)
+    const response = await api.get(`/stocks/${stockid}`)
 
     return {
         props: {

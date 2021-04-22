@@ -5,5 +5,7 @@ services:
     volumes:
       - ../server:/usr/src/app
   client:
+    env_file:
+      - client/env.local
     volumes:
       - ../client:/usr/src/app
