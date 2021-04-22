@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ForwardedRef } from 'react'
 import { css } from '../../utils'
 
 export interface InputProps extends React.HTMLProps<HTMLInputElement> {
@@ -31,24 +31,24 @@ const inputStyles = (uppercase?: boolean, error?: string) => {
     ]
 }
 
-export const Input = ({
-    label,
-    name,
-    uppercase,
-    error,
-    ...rest
-}: InputProps) => {
-    return (
-        <div className={css(styles)}>
-            <label className={css(labelStyles)} htmlFor={name}>
-                {label}
-            </label>
-            <input
-                className={css(inputStyles(uppercase, error))}
-                name={name}
-                {...rest}
-            />
-            {error && <span className={css(errorStyles)}>{error}</span>}
-        </div>
-    )
-}
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+    function InputRef(
+        { label, name, uppercase, error, ...rest }: InputProps,
+        ref: ForwardedRef<HTMLInputElement>
+    ) {
+        return (
+            <div className={css(styles)}>
+                <label className={css(labelStyles)} htmlFor={name}>
+                    {label}
+                </label>
+                <input
+                    className={css(inputStyles(uppercase, error))}
+                    name={name}
+                    ref={ref}
+                    {...rest}
+                />
+                {error && <span className={css(errorStyles)}>{error}</span>}
+            </div>
+        )
+    }
+)

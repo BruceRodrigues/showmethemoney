@@ -1,4 +1,5 @@
 export * from './Arrow'
+export * from './Autocomplete'
 export * from './Button'
 export * from './Card/Card'
 export * from './Container'
