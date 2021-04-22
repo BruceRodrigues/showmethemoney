@@ -17,3 +17,4 @@ add_parameter HOST
 add_parameter NODE_ENV
 add_parameter APP_KEY
 add_parameter DB_CONNECTION
+add_parameter FINNHUB_API_KEY

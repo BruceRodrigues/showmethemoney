@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { isLocal } from './environment'
+import { isStaging } from './environment'
 
 export const api = axios.create({
-    baseURL: `http://${isLocal() ? 'server' : '18.230.76.34'}:3333/api/`,
+    baseURL: `http://${isStaging() ? '18.230.76.34' : 'server'}:3333/api/`,
 })
