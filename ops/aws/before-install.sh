@@ -1,9 +1,7 @@
 cd /opt/smtm/ops
-docker-compose down
+docker-compose down --rmi local
 docker volume prune -f
 docker system prune -f
-docker rmi ops_client
-docker rmi ops_server
 
 rm ../server/.env
 touch ../server/.env

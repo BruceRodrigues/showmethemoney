@@ -14,7 +14,7 @@ COPY ./server .
 #Workaround
 RUN yarn add sqlite3
 
-RUN mkdir tmp/
+RUN mkdir -p tmp/
 
 RUN node ace migration:run
 

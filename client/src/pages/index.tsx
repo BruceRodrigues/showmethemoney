@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/dist/client/router'
 import React from 'react'
 import { Button } from '../atoms'
+import { api } from '../config'
 import { StockItemProps, StockList } from '../molecules'
 
 export default function Home({ stocks }: { stocks: StockItemProps[] }) {
@@ -23,8 +24,8 @@ export default function Home({ stocks }: { stocks: StockItemProps[] }) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const response = await fetch(`http://server:3333/api/stocks`)
-    const stocks = await response.json()
+    const response = await api.get(`/stocks`)
+    const stocks = response.data
 
     return {
         props: {

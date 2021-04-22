@@ -7,9 +7,7 @@ export default function AddPage() {
     const router = useRouter()
 
     const handleSumit = (data: StockFormData) => {
-        api.post('http://localhost:3333/api/stocks', data).then(() =>
-            router.push('/')
-        )
+        api.post('/stocks', data).then(() => router.push('/'))
     }
 
     return (

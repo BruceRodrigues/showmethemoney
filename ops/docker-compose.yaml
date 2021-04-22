@@ -15,5 +15,7 @@ services:
     ports:
       - 3000:3000
     container_name: client
+    env_file:
+      - client/env.staging
     depends_on:
       - server
